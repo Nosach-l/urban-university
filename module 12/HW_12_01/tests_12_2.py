@@ -20,17 +20,17 @@ class TournamentTest(unittest.TestCase):
 
     def test_race1(self):
         test_race = Tournament(90, self.runner1, self.runner3).start()
-        self.all_results[1] = test_race
+        self.all_results[1] = {i: runner.name for i, runner in test_race.items()}
         self.assertTrue(test_race[list(test_race.keys())[-1]] == self.runner3.name, 'Ник всегда должен быть последним')
 
     def test_race2(self):
         test_race = Tournament(90, self.runner2, self.runner3).start()
-        self.all_results[2] = test_race
+        self.all_results[2] = {i: runner.name for i, runner in test_race.items()}
         self.assertTrue(test_race[list(test_race.keys())[-1]] == self.runner3.name, 'Ник всегда должен быть последним')
 
     def test_race3(self):
         test_race = Tournament(90, self.runner1, self.runner2, self.runner3).start()
-        self.all_results[3] = test_race
+        self.all_results[3] = {i: runner.name for i, runner in test_race.items()}
         self.assertTrue(test_race[list(test_race.keys())[-1]] == self.runner3.name, 'Ник всегда должен быть последним')
 
 
